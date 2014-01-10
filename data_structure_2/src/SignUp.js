@@ -8,17 +8,6 @@ SignUp.render_sign_ups = function () {
     return activities[localStorage.current_activity].sign_ups
 }
 
-SignUp.sms_to_obj = function (json_message) {
-    var SMSObj;
-    _.each(json_message.messages, function (message) {
-        SMSObj = {
-            'text': message.message,
-            'phone': message.phone
-        }
-    })
-    return SMSObj
-}
-
 SignUp.judge_repeat_phone = function (name, phone) {
     if (!_.find(SignUp.render_sign_ups(), function (num) {
         return num.phone == phone
