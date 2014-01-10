@@ -9,17 +9,6 @@ SignUp.render_sign_ups = function (second_activity) {
     }).sign_ups || []
 }
 
-SignUp.sms_to_obj = function (json_message) {
-    var SMSObj;
-    _.each(json_message.messages, function (message) {
-        SMSObj = {
-            'text': message.message,
-            'phone': message.phone
-        }
-    })
-    return SMSObj
-}
-
 SignUp.get_activity_current = function(){
     return _.find(JSON.parse(localStorage.activities),function(num){
         return num.name == localStorage.current_activity
